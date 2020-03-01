@@ -27,7 +27,7 @@ class SchedulerService {
         println(tasks)
         return tasks
                 .filter { it.dependencyCount == 0 }
-                .minBy { it.deadline.plusDays(it.duration.toLong()) }
+                .minBy { it.deadline.minusDays(it.duration.toLong()) }
                 ?: throw IllegalArgumentException("tasklist empty!")
     }
 

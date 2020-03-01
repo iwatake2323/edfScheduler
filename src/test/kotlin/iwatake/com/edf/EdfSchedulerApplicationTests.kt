@@ -42,10 +42,11 @@ class EdfSchedulerApplicationTests(
         val job = Job(
                 members = listOf(Member(name = "john"), Member(name = "smith")),
                 tasks = listOf(
-                        Task(id = 0, name = "Develop module A", duration = 1, deadline = deadline),
-                        Task(id = 1, name = "Develop module B", duration = 2, deadline = deadline),
+                        Task(id = 0, name = "Develop module A", duration = 2, deadline = deadline),
+                        Task(id = 1, name = "Develop module B", duration = 1, deadline = deadline),
                         Task(id = 2, name = "Test module A", duration = 3, deadline = deadline, dependencies = listOf(0)),
-                        Task(id = 3, name = "Test module B", duration = 4, deadline = deadline, dependencies = listOf(1))
+                        Task(id = 3, name = "Test module B", duration = 5, deadline = deadline, dependencies = listOf(1)),
+                        Task(id = 4, name = "Integration test", duration = 10, deadline = deadline, dependencies = listOf(2, 3))
                 ),
                 start = start
         )
