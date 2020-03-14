@@ -40,7 +40,10 @@ class EdfSchedulerApplicationTests(
     @Test
     fun testSchedulerWithDependency() {
         val job = Job(
-                members = listOf(Member(name = "john"), Member(name = "smith")),
+                members = listOf(
+                        Member(name = "john", availableFrom = start),
+                        Member(name = "smith", availableFrom = start)
+                ),
                 tasks = listOf(
                         Task(id = 0, name = "Develop module A", duration = 2, deadline = deadline),
                         Task(id = 1, name = "Develop module B", duration = 1, deadline = deadline),

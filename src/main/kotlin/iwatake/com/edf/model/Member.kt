@@ -5,6 +5,6 @@ import java.time.LocalDate
 data class Member(
         val name: String = "member",
         val tasks: MutableList<Task> = mutableListOf(),
-        var end: LocalDate = LocalDate.now()
+        var availableFrom: LocalDate = LocalDate.now()
 ) {
 }
